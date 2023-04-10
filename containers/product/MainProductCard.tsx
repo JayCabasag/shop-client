@@ -9,7 +9,7 @@ interface MainProductCard {
 export default function MainProductCard({ product } : MainProductCard) {
   return (
     <div>
-        <div className='flex'>
+        <div className='flex flex-col md:flex-row'>
           <Image
             src={product.image}
             height={500}

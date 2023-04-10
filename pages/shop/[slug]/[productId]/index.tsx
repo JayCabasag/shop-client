@@ -67,12 +67,13 @@ export async function getStaticPaths(context: GetStaticPathsContext) {
   export async function getStaticProps(context: GetStaticPropsContext) {
     const res = await fetch("http://localhost:8080/api/v1/shops")
     const data = await res.json()
+    
     const slug = context?.params?.slug as String ?? ''
-    const productId = context?.params?.productId as String ?? ''
     const shop = data.find((shop: Shop) => {
         return slug === shop.slug
     })
 
+    const productId = context?.params?.productId as String ?? ''
     const productRes = await fetch(`http://localhost:8080/api/v1/product/${productId}`)
     const product = await productRes.json()
 

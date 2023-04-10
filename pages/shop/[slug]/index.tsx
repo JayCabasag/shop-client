@@ -1,8 +1,6 @@
-import { Navbar } from '@/containers/navbar'
 import { ProductList } from '@/containers/shop';
 import ShopHeader from '@/containers/shop/ShopHeader';
 import { GetStaticPropsContext } from 'next';
-import Image from 'next/image';
 import React, { useEffect } from 'react'
 
 interface Shop {
@@ -45,7 +43,7 @@ export default function ShopPage({ shop }: ShopPageProps) {
         {shop.description}
       </div>
       <div className='flex flex-col'>
-        <h2 className='font-bold text-xl py-2'>Products</h2>
+        <h2 className='font-bold text-xl py-2 text-slate-700'>Products</h2>
         <ProductList shop={shop}/>
       </div>
       </section>

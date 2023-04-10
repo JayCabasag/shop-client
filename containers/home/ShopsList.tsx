@@ -25,23 +25,25 @@ interface ShopListProps {
 
 export default function ShopsList({ shops } : ShopListProps) {
   return (
-    <div>
-      <h1 className='font-bold text-2xl py-2'>Shops</h1>
+    <div className='pt-6'>
+      <h1 className='font-bold text-lg uppercase py-2 text-slate-600'>Shops</h1>
       <div className='w-full p-2 flex flex-wrap gap-8 items-center justify-center'>
         {shops.map((shop: Shop, index: number) => {
           return (
             <Link href={`/shop/${shop.slug}`} key={index} passHref legacyBehavior>
               <a>
-                <div className='flex gap-2 p-4'>
-                  <Image 
-                    src={shop.logo}
-                    height={100}
-                    width={100}
-                    alt={shop.name}
-                  />
+                <div className='flex gap-2 p-4 shadow-lg rounded-md'>
+                  <div className='px-4'>
+                    <Image 
+                      src={shop.logo}
+                      height={100}
+                      width={100}
+                      alt={shop.name}
+                    />
+                  </div>
                   <div>
-                    <h2 className='font-bold'>{shop.name}</h2>
-                    <p>Official Store</p>
+                    <h2 className='font-bold text-lg text-slate-600'>{shop.name}</h2>
+                    <p className='text-slate-500'>Official Store</p>
                   </div>
                 </div>
               </a>
