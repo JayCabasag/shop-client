@@ -1,3 +1,4 @@
+import { Footer } from '@/containers/footer'
 import { Navbar } from '@/containers/navbar'
 import React, { ReactNode } from 'react'
 
@@ -6,5 +7,9 @@ interface MainLayoutProps {
 }
 
 export default function MainLayout({ children }: MainLayoutProps) {
-  return <><Navbar />{children}</>
+  return <>
+    <Navbar />
+    {children}
+    <Footer/>
+    </>
 }

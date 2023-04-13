@@ -32,7 +32,7 @@ export default function ShopsList({ shops } : ShopListProps) {
           return (
             <Link href={`/shop/${shop.slug}`} key={index} passHref legacyBehavior>
               <a>
-                <div className='flex gap-2 p-4 shadow-lg rounded-md'>
+                <div className='flex gap-2 p-4 shadow-lg rounded-md w-full  md:w-[330px] max-w-[330px]  min-w-[330px]'>
                   <div className='px-4'>
                     <Image 
                       src={shop.logo}
@@ -42,7 +42,7 @@ export default function ShopsList({ shops } : ShopListProps) {
                     />
                   </div>
                   <div>
-                    <h2 className='font-bold text-lg text-slate-600'>{shop.name}</h2>
+                    <h2 className='font-bold text-lg text-slate-600 truncate'>{shop.name}</h2>
                     <p className='text-slate-500'>Official Store</p>
                   </div>
                 </div>

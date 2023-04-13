@@ -24,3 +24,14 @@ export interface Product {
   brand: string;
   price: number;
 }
+
+export interface CartProduct {
+  id: number;
+  quantity: number;
+  shop: number;
+  name: string;
+  image: string;
+  description: string;
+  brand: string;
+  price: number;
+}
