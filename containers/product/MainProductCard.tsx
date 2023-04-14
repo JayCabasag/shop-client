@@ -1,14 +1,31 @@
 import Image from 'next/image';
-import React from 'react'
+import React, { useState } from 'react'
 import { Product } from '@/utils/types';
+import { useAppSelector } from '@/app/hooks';
+import { CreateAccountWarning } from '@/components/modals';
 
 interface MainProductCard {
     product: Product
 }
 
 export default function MainProductCard({ product } : MainProductCard) {
+  const [openModal, setOpenModal] = useState(false)
+  const userSelector = useAppSelector(state => state.user)
+  const handleAddProduct = () => {
+    if (!userSelector.id) {
+      setOpenModal(true)
+      return
+    }
+    console.log('Proceed')
+  }
+  
+  const handleModalToggler = () => {
+    setOpenModal(state => !state)
+  }
+
   return (
     <div>
+        <CreateAccountWarning open={openModal} handleModalToggler={handleModalToggler}/>
         <div className='flex flex-col md:flex-row'>
           <Image
             src={product.image}
@@ -36,6 +53,7 @@ export default function MainProductCard({ product } : MainProductCard) {
             <button
               type="submit"
               className="block rounded bg-slate-400 px-5 py-3 text-xs font-medium text-white hover:bg-slate-500"
+              onClick={handleAddProduct}
             >
               Add to Cart
             </button>

@@ -28,8 +28,8 @@ export default function ShopHeader({ shop } : ShopHeaderProps) {
     <div className='flex gap-2 p-4'>
     <Image
       src={shop.logo}
-      height={70}
-      width={100}
+      height={50}
+      width={150}
       alt={shop.name}
     />
     <div className='ml-4'>

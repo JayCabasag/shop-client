@@ -1,5 +1,6 @@
 import { ProductCard } from '@/components/product'
 import { Product } from '@/utils/types'
+import Head from 'next/head'
 import React, { useState } from 'react'
 
 interface GadgetsPageProps {
@@ -12,6 +13,10 @@ export default function GadgetsPage({ products } : GadgetsPageProps) {
 
   return (
     <main className="w-full flex flex-col items-center h-auto">
+      <Head>
+        <title>Buy gadgets | gadgets</title>
+        <meta property="og:gadgets" content="My page title" key="gadgets" />
+      </Head>
       <section className="container flex px-2 md:px-0">
         <div>
           <h1 className='font-bold text-lg uppercase py-4 md:py-6 text-slate-600'>Gadgets</h1>

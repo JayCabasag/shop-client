@@ -27,7 +27,7 @@ export default function ShopsList({ shops } : ShopListProps) {
   return (
     <div className='pt-6'>
       <h1 className='font-bold text-lg uppercase py-2 text-slate-600'>Shops</h1>
-      <div className='w-full p-2 flex flex-wrap gap-8 items-center justify-center'>
+      <div className='w-full p-2 flex flex-wrap gap-2 md:gap-8 items-center justify-center'>
         {shops.map((shop: Shop, index: number) => {
           return (
             <Link href={`/shop/${shop.slug}`} key={index} passHref legacyBehavior>

@@ -1,6 +1,7 @@
 import { ProductList } from '@/containers/shop';
 import ShopHeader from '@/containers/shop/ShopHeader';
 import { GetStaticPropsContext } from 'next';
+import Head from 'next/head';
 import React, { useEffect } from 'react'
 
 interface Shop {
@@ -37,13 +38,17 @@ export default function ShopPage({ shop }: ShopPageProps) {
 
   return (
     <main className="w-full flex flex-col items-center  h-auto">
+      <Head>
+        <title>Buy gadgets | shop</title>
+        <meta property="og:shop" content="My page title" key="shop" />
+      </Head>
       <section className="container flex flex-col">
-    <ShopHeader shop={shop}/>
-      <div className='px-4 font-medium'>
+      <ShopHeader shop={shop}/>
+      <div className='px-4 font-bold text-slate-500 text-center  md:text-left'>
         {shop.description}
       </div>
-      <div className='flex flex-col'>
-        <h2 className='font-bold text-xl py-2 text-slate-700'>Products</h2>
+      <div className='flex flex-col px-4 md:px-4'>
+        <h2 className='font-bold text-xl py-2 text-slate-500'>Products</h2>
         <ProductList shop={shop}/>
       </div>
       </section>

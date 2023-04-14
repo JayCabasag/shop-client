@@ -11,6 +11,12 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: '*',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'logos-world.net',
         port: '',
         pathname: '/**',
@@ -18,6 +24,12 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'www.samsung.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.us.news.samsung.com',
         port: '',
         pathname: '/**',
       },
